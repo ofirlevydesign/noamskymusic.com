@@ -41,6 +41,18 @@ document.querySelectorAll('.navbar__links a, .mobile-menu__links a').forEach((li
   link.classList.toggle('is-active', active);
 });
 
+// Discography filter (All / Singles / Albums)
+const discographyFilter = document.getElementById('discography-filter');
+if (discographyFilter) {
+  discographyFilter.addEventListener('change', () => {
+    const value = discographyFilter.value;
+    document.querySelectorAll('#discography-grid .card-release').forEach((card) => {
+      const match = value === 'all' || card.dataset.type === value;
+      card.style.display = match ? '' : 'none';
+    });
+  });
+}
+
 // Scroll-reveal animation
 const revealEls = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window && revealEls.length) {

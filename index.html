@@ -23,13 +23,13 @@
 
 <header>
   <nav class="navbar">
-    <a href="index.html" class="navbar__logo">NOAM SKY MUSIC</a>
+    <a href="index.html" class="navbar__logo">NOAM <span class="logo-accent">SKY</span> MUSIC</a>
     <div class="navbar__links">
       <a href="index.html">Home</a>
       <a href="index.html#music">Music</a>
       <a href="bio.html">Bio</a>
       <a href="upcoming.html">Upcoming</a>
-      <a href="merch.html">Merch</a>
+      <a href="contact.html">Contact</a>
     </div>
     <div class="navbar__social">
       <a href="https://open.spotify.com/artist/3KCrRswLE3EckEKLmnFYB4" target="_blank" rel="noopener" aria-label="Spotify"><svg class="icon"><use href="#icon-spotify"/></svg></a>
@@ -40,7 +40,7 @@
   </nav>
   <div class="mobile-menu">
     <div class="mobile-menu__top">
-      <span class="navbar__logo">NOAM SKY MUSIC</span>
+      <span class="navbar__logo">NOAM <span class="logo-accent">SKY</span> MUSIC</span>
       <button class="mobile-menu__close" aria-label="Close menu"><svg><use href="#icon-close"/></svg></button>
     </div>
     <nav class="mobile-menu__links">
@@ -48,7 +48,7 @@
       <a href="index.html#music">Music</a>
       <a href="bio.html">Bio</a>
       <a href="upcoming.html">Upcoming</a>
-      <a href="merch.html">Merch</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <div class="mobile-menu__social">
       <a href="https://open.spotify.com/artist/3KCrRswLE3EckEKLmnFYB4" target="_blank" rel="noopener" aria-label="Spotify"><svg><use href="#icon-spotify"/></svg></a>
@@ -65,8 +65,8 @@
     <div class="container" style="position:relative; z-index:1;">
       <div class="stack reveal" style="gap:24px;">
         <span class="eyebrow">Electronic Music Producer</span>
-        <h1 class="display-xl">GET UP<br>AND MOVE</h1>
-        <p class="body-l hero-copy-width">Original electronic productions built to move you. Out now on Spotify and YouTube.</p>
+        <h1 class="display-xl">EVERY TRACK BEGINS<br>WITH AN IDEA</h1>
+        <p class="body-l hero-copy-width">Original electronic productions inspired by emotion, movement, and imagination. Every track is crafted to tell a story through sound.</p>
         <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:8px;">
           <a href="https://open.spotify.com/artist/3KCrRswLE3EckEKLmnFYB4" target="_blank" rel="noopener" class="btn btn--primary">Listen on Spotify <svg class="icon"><use href="#icon-spotify"/></svg></a>
           <a href="https://www.youtube.com/channel/UCnP8buB6lPti-7TwCnm3Qtg" target="_blank" rel="noopener" class="btn btn--secondary">Listen on YouTube <svg class="icon"><use href="#icon-youtube"/></svg></a>
@@ -79,10 +79,17 @@
     <div class="container">
       <div class="section-header section-header--row reveal">
         <h2 class="heading-l">Discography</h2>
-        <a href="https://noamlevyofficial.bandcamp.com" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; color:var(--text-secondary);" class="label">Full Catalog on Bandcamp <svg class="icon" style="width:16px;height:16px;"><use href="#icon-arrow-up-right"/></svg></a>
+        <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+          <select id="discography-filter" class="filter-select" aria-label="Filter releases by type">
+            <option value="all">All</option>
+            <option value="single">Singles</option>
+            <option value="album">Albums</option>
+          </select>
+          <a href="https://noamlevyofficial.bandcamp.com" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; color:var(--text-secondary);" class="label">Full Catalog on Bandcamp <svg class="icon" style="width:16px;height:16px;"><use href="#icon-arrow-up-right"/></svg></a>
+        </div>
       </div>
-      <div class="grid grid--3">
-        <a href="https://noamlevyofficial.bandcamp.com/track/red-mercedes-feat-zia" target="_blank" rel="noopener" class="card-release reveal">
+      <div class="grid grid--3" id="discography-grid">
+        <a href="https://noamlevyofficial.bandcamp.com/track/red-mercedes-feat-zia" target="_blank" rel="noopener" class="card-release reveal" data-type="single">
           <div class="card-release__art"><img src="assets/releases/red-mercedes.jpg" alt="RED MERCEDES cover art" loading="lazy"><div class="card-release__play"><svg><use href="#icon-play"/></svg></div></div>
           <div class="card-release__meta">
             <span class="tag"><span class="tag__dot"></span><span class="tag__label label">Single</span></span>
@@ -90,7 +97,7 @@
           </div>
           <h3 class="heading-s">RED MERCEDES (feat. zia)</h3>
         </a>
-        <a href="https://noamlevyofficial.bandcamp.com/album/asterism" target="_blank" rel="noopener" class="card-release reveal">
+        <a href="https://noamlevyofficial.bandcamp.com/album/asterism" target="_blank" rel="noopener" class="card-release reveal" data-type="album">
           <div class="card-release__art"><img src="assets/releases/asterism.jpg" alt="ASTERISM cover art" loading="lazy"><div class="card-release__play"><svg><use href="#icon-play"/></svg></div></div>
           <div class="card-release__meta">
             <span class="tag"><span class="tag__dot"></span><span class="tag__label label">Album</span></span>
@@ -99,7 +106,7 @@
           <h3 class="heading-s">ASTERISM</h3>
           <span class="body-s card-release__type">5 tracks</span>
         </a>
-        <a href="https://noamlevyofficial.bandcamp.com/track/blind-feat-zia" target="_blank" rel="noopener" class="card-release reveal">
+        <a href="https://noamlevyofficial.bandcamp.com/track/blind-feat-zia" target="_blank" rel="noopener" class="card-release reveal" data-type="single">
           <div class="card-release__art"><img src="assets/releases/blind.jpg" alt="BLIND cover art" loading="lazy"><div class="card-release__play"><svg><use href="#icon-play"/></svg></div></div>
           <div class="card-release__meta">
             <span class="tag"><span class="tag__dot"></span><span class="tag__label label">Single</span></span>
@@ -107,7 +114,7 @@
           </div>
           <h3 class="heading-s">BLIND (feat. zia)</h3>
         </a>
-        <a href="https://noamlevyofficial.bandcamp.com/track/standing-still-feat-zia" target="_blank" rel="noopener" class="card-release reveal">
+        <a href="https://noamlevyofficial.bandcamp.com/track/standing-still-feat-zia" target="_blank" rel="noopener" class="card-release reveal" data-type="single">
           <div class="card-release__art"><img src="assets/releases/standing-still.jpg" alt="STANDING STILL cover art" loading="lazy"><div class="card-release__play"><svg><use href="#icon-play"/></svg></div></div>
           <div class="card-release__meta">
             <span class="tag"><span class="tag__dot"></span><span class="tag__label label">Single</span></span>
@@ -115,7 +122,7 @@
           </div>
           <h3 class="heading-s">STANDING STILL (feat. zia)</h3>
         </a>
-        <a href="https://noamlevyofficial.bandcamp.com/album/what-you-want" target="_blank" rel="noopener" class="card-release reveal">
+        <a href="https://noamlevyofficial.bandcamp.com/album/what-you-want" target="_blank" rel="noopener" class="card-release reveal" data-type="album">
           <div class="card-release__art"><img src="assets/releases/what-you-want.jpg" alt="WHAT YOU WANT cover art" loading="lazy"><div class="card-release__play"><svg><use href="#icon-play"/></svg></div></div>
           <div class="card-release__meta">
             <span class="tag"><span class="tag__dot"></span><span class="tag__label label">EP</span></span>
@@ -124,7 +131,7 @@
           <h3 class="heading-s">WHAT YOU WANT</h3>
           <span class="body-s card-release__type">2 tracks</span>
         </a>
-        <a href="https://noamlevyofficial.bandcamp.com/album/singularity" target="_blank" rel="noopener" class="card-release reveal">
+        <a href="https://noamlevyofficial.bandcamp.com/album/singularity" target="_blank" rel="noopener" class="card-release reveal" data-type="album">
           <div class="card-release__art"><img src="assets/releases/singularity.jpg" alt="Singularity cover art" loading="lazy"><div class="card-release__play"><svg><use href="#icon-play"/></svg></div></div>
           <div class="card-release__meta">
             <span class="tag"><span class="tag__dot"></span><span class="tag__label label">Album</span></span>
@@ -133,7 +140,7 @@
           <h3 class="heading-s">Singularity</h3>
           <span class="body-s card-release__type">5 tracks</span>
         </a>
-        <a href="https://noamlevyofficial.bandcamp.com/album/datamosh" target="_blank" rel="noopener" class="card-release reveal">
+        <a href="https://noamlevyofficial.bandcamp.com/album/datamosh" target="_blank" rel="noopener" class="card-release reveal" data-type="album">
           <div class="card-release__art"><img src="assets/releases/datamosh.jpg" alt="Datamosh cover art" loading="lazy"><div class="card-release__play"><svg><use href="#icon-play"/></svg></div></div>
           <div class="card-release__meta">
             <span class="tag"><span class="tag__dot"></span><span class="tag__label label">Album</span></span>
@@ -142,7 +149,7 @@
           <h3 class="heading-s">Datamosh</h3>
           <span class="body-s card-release__type">5 tracks</span>
         </a>
-        <a href="https://noamlevyofficial.bandcamp.com/track/ethereal" target="_blank" rel="noopener" class="card-release reveal">
+        <a href="https://noamlevyofficial.bandcamp.com/track/ethereal" target="_blank" rel="noopener" class="card-release reveal" data-type="single">
           <div class="card-release__art"><img src="assets/releases/ethereal.jpg" alt="Ethereal cover art" loading="lazy"><div class="card-release__play"><svg><use href="#icon-play"/></svg></div></div>
           <div class="card-release__meta">
             <span class="tag"><span class="tag__dot"></span><span class="tag__label label">Single</span></span>
@@ -150,7 +157,7 @@
           </div>
           <h3 class="heading-s">Ethereal</h3>
         </a>
-        <a href="https://noamlevyofficial.bandcamp.com/album/battle" target="_blank" rel="noopener" class="card-release reveal">
+        <a href="https://noamlevyofficial.bandcamp.com/album/battle" target="_blank" rel="noopener" class="card-release reveal" data-type="album">
           <div class="card-release__art"><img src="assets/releases/battle.jpg" alt="Battle cover art" loading="lazy"><div class="card-release__play"><svg><use href="#icon-play"/></svg></div></div>
           <div class="card-release__meta">
             <span class="tag"><span class="tag__dot"></span><span class="tag__label label">Album</span></span>
@@ -159,7 +166,7 @@
           <h3 class="heading-s">Battle</h3>
           <span class="body-s card-release__type">8 tracks</span>
         </a>
-        <a href="https://noamlevyofficial.bandcamp.com/album/minecraft-music-disc-concepts" target="_blank" rel="noopener" class="card-release reveal">
+        <a href="https://noamlevyofficial.bandcamp.com/album/minecraft-music-disc-concepts" target="_blank" rel="noopener" class="card-release reveal" data-type="album">
           <div class="card-release__art"><img src="assets/releases/minecraft-music-disc-concepts.jpg" alt="Minecraft Music Disc Concepts cover art" loading="lazy"><div class="card-release__play"><svg><use href="#icon-play"/></svg></div></div>
           <div class="card-release__meta">
             <span class="tag"><span class="tag__dot"></span><span class="tag__label label">Album</span></span>
@@ -208,7 +215,7 @@
 
 <footer class="footer">
   <div class="footer__brand">
-    <span class="footer__logo">NOAM SKY MUSIC</span>
+    <span class="footer__logo">NOAM <span class="logo-accent">SKY</span> MUSIC</span>
     <p class="footer__tagline body-s">Electronic music crafted in Logic Pro,&#10;released into the world.</p>
   </div>
   <div class="footer__meta">
