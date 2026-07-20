@@ -21,6 +21,7 @@
   --gray: #8E8E93;
   --gray-3: #C7C7CC;
   --gray-5: #E5E5EA;
+  --accent-teal: #5EEAD4;
 
   /* Spacing */
   --space-4: 4px;
@@ -340,6 +341,31 @@ ul { list-style: none; margin: 0; padding: 0; }
 .mobile-menu__social { display: flex; gap: 24px; }
 .mobile-menu__social svg { width: 22px; height: 22px; }
 @media (min-width: 900px) { .mobile-menu { display: none; } }
+
+/* ---------- Sound wave strip ---------- */
+.wave-strip {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  overflow: hidden;
+  background: var(--bg-base);
+}
+.wave-strip__layer {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat-x;
+  animation-name: wave-drift-bg;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes wave-drift-bg {
+  from { background-position-x: 0; }
+  to { background-position-x: -420px; } /* must match TILE_PX in js/main.js */
+}
+@media (prefers-reduced-motion: reduce) {
+  .wave-strip__layer { animation: none; }
+}
 
 /* ---------- Footer ---------- */
 .footer {
