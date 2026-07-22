@@ -608,7 +608,8 @@ ul { list-style: none; margin: 0; padding: 0; }
   width: 100%;
   aspect-ratio: 354 / 320;
   border-radius: var(--radius-lg);
-  background: linear-gradient(150deg, var(--accent-primary), var(--bg-elevated-2) 85%);
+  object-fit: cover;
+  object-position: 25% center;
   flex-shrink: 0;
 }
 @media (min-width: 900px) {
