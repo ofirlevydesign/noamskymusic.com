@@ -9,7 +9,7 @@
 const waveStripEl = document.getElementById('wave-strip');
 if (waveStripEl) {
   const TILE = 1000; // one period, in the SVG's own user units
-  const HEIGHT = 30;
+  const HEIGHT = 50;
   const CENTER = HEIGHT / 2;
   const TILE_PX = 420; // rendered width of one tile once tiled on-screen
 
@@ -61,13 +61,13 @@ if (waveStripEl) {
   const PURPLE = '#7C5CFF';
 
   const layerDefs = [
-    { freq: 6, modFreq: 1, amp: 9, strokeWidth: 2.2, opacity: 0.20, baseDuration: 24, reverse: false,
+    { freq: 6, modFreq: 1, amp: 23.4, strokeWidth: 2.2, opacity: 0.20, baseDuration: 24, reverse: false,
       stops: [[0, TEAL], [50, PURPLE], [100, TEAL]] },
-    { freq: 9, modFreq: 2, amp: 7, strokeWidth: 1.8, opacity: 0.16, baseDuration: 16, reverse: true,
+    { freq: 9, modFreq: 2, amp: 22.46, strokeWidth: 1.8, opacity: 0.16, baseDuration: 16, reverse: true,
       stops: [[0, PURPLE], [50, TEAL], [100, PURPLE]] },
-    { freq: 13, modFreq: 3, amp: 5, strokeWidth: 1.4, opacity: 0.24, baseDuration: 10, reverse: false,
+    { freq: 13, modFreq: 3, amp: 14.98, strokeWidth: 1.4, opacity: 0.24, baseDuration: 10, reverse: false,
       stops: [[0, TEAL], [35, PURPLE], [70, TEAL], [100, TEAL]] },
-    { freq: 18, modFreq: 4, amp: 3.5, strokeWidth: 1.2, opacity: 0.16, baseDuration: 7, reverse: true,
+    { freq: 18, modFreq: 4, amp: 11.23, strokeWidth: 1.2, opacity: 0.16, baseDuration: 7, reverse: true,
       stops: [[0, PURPLE], [50, TEAL], [100, PURPLE]] },
   ];
 
