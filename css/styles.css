@@ -506,28 +506,16 @@ ul { list-style: none; margin: 0; padding: 0; }
   padding: var(--space-24) var(--space-24);
   background: var(--bg-elevated);
   border-radius: var(--radius-lg);
-  transition: background var(--transition-fast), transform var(--transition-fast);
 }
 @media (min-width: 900px) {
   .card-collab { gap: var(--space-32); padding: 28px 32px; }
 }
-.card-collab:hover { background: var(--bg-elevated-2); transform: translateY(-2px); }
 .card-collab__date { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
-.card-collab__date .month { color: var(--text-secondary); font-family: var(--font-display); font-weight: 500; font-size: 14px; }
-.card-collab__date .day { color: var(--text-primary); font-family: var(--font-display); font-weight: 700; font-size: 22px; }
+.card-collab__date .month { color: var(--text-secondary); font-family: var(--font-body); font-weight: 600; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; }
+.card-collab__date .year { color: var(--text-primary); font-family: var(--font-display); font-weight: 700; font-size: 22px; }
 .card-collab__divider { width: 1px; height: 48px; background: var(--border-subtle); flex-shrink: 0; display: none; }
 @media (min-width: 560px) { .card-collab__divider { display: block; } }
 .card-collab__info { display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 0; }
-.card-collab__arrow {
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  background: var(--white);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  transition: transform var(--transition-fast), background var(--transition-fast);
-}
-.card-collab__arrow svg { width: 18px; height: 18px; color: var(--black); }
-.card-collab:hover .card-collab__arrow { background: var(--accent-volt); transform: rotate(45deg); }
 
 .card-collaborator {
   display: flex;
