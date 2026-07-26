@@ -605,6 +605,27 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .bio-hero__text { display: flex; flex-direction: column; gap: var(--space-24); }
 
+/* ---------- Contact hero ---------- */
+.contact-hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+@media (min-width: 900px) {
+  .contact-hero { flex-direction: row; align-items: center; gap: 80px; }
+}
+.contact-hero__portrait {
+  width: 100%;
+  aspect-ratio: 354 / 320;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+@media (min-width: 900px) {
+  .contact-hero__portrait { width: 480px; aspect-ratio: 480 / 560; }
+}
+.contact-hero__text { display: flex; flex-direction: column; gap: var(--space-24); }
+
 /* ---------- Utility ---------- */
 .stack { display: flex; flex-direction: column; }
 .text-center { text-align: center; }
