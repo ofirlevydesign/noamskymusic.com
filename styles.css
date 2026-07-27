@@ -303,7 +303,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   align-items: center;
 }
 @media (min-width: 900px) {
-  .navbar__links { display: flex; }
+  .navbar__links { display: flex; transform: translateX(-20px); }
 }
 .navbar__links a {
   color: var(--text-secondary);
