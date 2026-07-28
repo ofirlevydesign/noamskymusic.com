@@ -303,7 +303,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   align-items: center;
 }
 @media (min-width: 900px) {
-  .navbar__links { display: flex; transform: translateX(-20px); }
+  .navbar__links { display: flex; transform: translateX(-60px); }
 }
 .navbar__links a {
   color: var(--text-secondary);
@@ -324,6 +324,8 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .navbar__social a svg { width: 20px; height: 20px; color: var(--white); transition: opacity var(--transition-fast); }
 .navbar__social a:hover svg { opacity: 0.6; }
+.navbar__social a .icon--kofi,
+.mobile-menu__social a .icon--kofi { width: 25px; height: 20px; }
 .navbar__menu-btn {
   display: flex;
   padding: 4px;
@@ -409,6 +411,9 @@ ul { list-style: none; margin: 0; padding: 0; }
 .footer__social svg { width: 20px; height: 20px; transition: opacity var(--transition-fast); }
 .footer__social a:hover svg { opacity: 0.6; }
 .footer__copyright { color: var(--text-tertiary); font-size: 14px; }
+.footer__kofi { display: inline-flex; transition: opacity var(--transition-fast); }
+.footer__kofi:hover { opacity: 0.85; }
+.footer__kofi img { height: 36px; width: auto; display: block; }
 
 /* ---------- Glow ---------- */
 .glow {
