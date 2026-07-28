@@ -155,6 +155,90 @@ if (discographyFilter) {
   });
 }
 
+// Discography audio previews: one clip plays at a time, fade in/out is
+// baked into the mp3 itself, so playback here is just play/pause/seek.
+const previewCards = document.querySelectorAll('.card-release[data-preview]');
+if (previewCards.length) {
+  let current = null; // { card, btn, use, label, bar, audio }
+
+  function stopCurrent() {
+    if (!current) return;
+    current.audio.pause();
+    current.card.classList.remove('is-playing');
+    current.btn.classList.remove('is-playing');
+    current.use.setAttribute('href', '#icon-play-sm');
+    current.label.textContent = 'Preview';
+    if (current.bar) current.bar.style.width = '0%';
+    current = null;
+  }
+
+  previewCards.forEach((card) => {
+    const src = card.dataset.preview;
+    const btn = card.querySelector('.card-release__action--preview');
+    const fullTrackLink = card.querySelector('.card-release__action--full');
+    const bar = card.querySelector('.card-release__progress-bar');
+    if (!btn) return;
+    const use = btn.querySelector('use');
+    const label = btn.querySelector('span');
+    let audio = null;
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (current && current.card === card) {
+        if (audio.paused) {
+          audio.play();
+          card.classList.add('is-playing');
+          btn.classList.add('is-playing');
+          use.setAttribute('href', '#icon-pause-sm');
+          label.textContent = 'Pause';
+        } else {
+          audio.pause();
+          card.classList.remove('is-playing');
+          btn.classList.remove('is-playing');
+          use.setAttribute('href', '#icon-play-sm');
+          label.textContent = 'Preview';
+        }
+        return;
+      }
+
+      stopCurrent();
+
+      if (!audio) {
+        audio = new Audio(src);
+        audio.addEventListener('timeupdate', () => {
+          if (bar && audio.duration) {
+            bar.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
+          }
+        });
+        audio.addEventListener('ended', () => {
+          card.classList.remove('is-playing');
+          btn.classList.remove('is-playing');
+          use.setAttribute('href', '#icon-play-sm');
+          label.textContent = 'Preview';
+          if (bar) bar.style.width = '0%';
+          current = null;
+        });
+      }
+
+      audio.currentTime = 0;
+      audio.play();
+      card.classList.add('is-playing');
+      btn.classList.add('is-playing');
+      use.setAttribute('href', '#icon-pause-sm');
+      label.textContent = 'Pause';
+      current = { card, btn, use, label, bar, audio };
+    });
+
+    if (fullTrackLink) {
+      fullTrackLink.addEventListener('click', () => {
+        if (current && current.card === card) stopCurrent();
+      });
+    }
+  });
+}
+
 // Scroll-reveal animation
 const revealEls = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window && revealEls.length) {
